@@ -1,0 +1,13 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Manrope", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  min-width: 100vw;
+  background: linear-gradient(#FF6B4A 0%, rgba(255, 255, 255, 0.8));
+}

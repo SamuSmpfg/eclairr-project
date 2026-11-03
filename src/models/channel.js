@@ -8,6 +8,7 @@ const Channel = mongoose.model('Channel', {
   name: String,
   subscribers: Number,
   videosPublished: Number,
+  totalViews: Number,
   overallScore: Number,
   avgViews: Number,
   avgEngagement: Number,

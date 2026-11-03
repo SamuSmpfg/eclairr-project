@@ -46,10 +46,10 @@ const Workflow = () => {
 
   return (
     <SkeletonTheme baseColor="#E4E4EF" highlightColor="#F6F6FC">
-      <span className="font-semibold mb-[16px] ml-[135px]">
+      <span className="font-semibold mb-[16px] ml-[146px]">
         Pre-publish workflow
       </span>
-      <div className="flex flex-col w-full items-center ml-[35px]">
+      <div className="flex flex-col w-full items-center">
         <div className="flex flex-row gap-[16px]">
 
           {/* HILC Topic Tool */}

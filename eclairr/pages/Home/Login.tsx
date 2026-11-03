@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
 import './style.css'
 import api from '../../src/services/api'
 import { FaRegTrashAlt } from 'react-icons/fa'
@@ -13,6 +12,7 @@ interface User {
 
 function Login() {
   const [users, setUsers] = useState<User[]>([])
+  const [loginLink, setLoginLink] = useState('')
 
   async function getUsers() {
     try {
@@ -20,6 +20,15 @@ function Login() {
       setUsers(usersFromApi.data.users)
     } catch (error) {
       console.error('Erro ao buscar usuários:', error)
+    }
+  }
+
+  async function getLoginLink() {
+    try {
+      const res = await api.get('/auth/login-link')
+      setLoginLink(res.data.loginLink)
+    } catch (error) {
+      console.error('Erro ao buscar link de login:', error)
     }
   }
 
@@ -34,15 +43,16 @@ function Login() {
 
   useEffect(() => {
     getUsers()
+    getLoginLink()
   }, [])
 
   return (
     <div className='container'>
       <form>
         <h1>Log in</h1>
-        <p>Don't have an Account?{' '}
-          <Link to='/sign-up' className='signup-link' >Sign Up!</Link>
-        </p>
+       <a href={loginLink} rel='noopener noreferrer' className='youtube-login-link'>
+  Log in with Youtube
+</a>
       </form>
 
       {users.map((user) => (

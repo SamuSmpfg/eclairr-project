@@ -1,5 +1,10 @@
 const mongoose = require('mongoose')
 const User = mongoose.model('User', {
+  googleId: {
+    type: String,
+    unique: true,
+    sparse: true
+  },
   name: {
     type: String,
     required: true
@@ -10,7 +15,12 @@ const User = mongoose.model('User', {
   },
   password: {
     type: String,
-    required: true
+    required: function () {
+      return !this.googleId
+    }
+  },
+  avatar: {
+    type: String
   },
   channel: {
     type: String,

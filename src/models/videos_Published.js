@@ -4,6 +4,7 @@ const VideosPublished = mongoose.model('VideosPublished', {
     type: mongoose.Types.ObjectId,
     ref: 'User'
   },
+  videoId: String,
   title: String,
   thumbnailUrl: String,
   publishedAt: Date,

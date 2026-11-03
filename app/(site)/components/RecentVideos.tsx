@@ -68,7 +68,7 @@ const RecentVideos = () => {
             font-medium
             text-[16px]
             tracking-[-2%]
-            ml-[52px]
+            ml-[62px]
           "
       >
         Recent videos perfomance
